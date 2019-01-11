@@ -1,8 +1,10 @@
-const UNKNOWN = 'U';
-
-const MAPPING = {
-  'true': 'T',
-  'false': 'N'
+export default (value) => {
+  switch (value) {
+    case true:
+      return 'T'
+    case false:
+      return 'N'
+    default:
+      return 'U'
+  }
 }
-
-export default (value) => MAPPING[value] || UNKNOWN

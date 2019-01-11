@@ -1,39 +1,36 @@
-import truncationIndicator from '../transformers/truncation-indicator'
-
-const DBC_MAPPING = {
-  'Canada': 'CAN',
-  'U.S.': 'USA'
-}
+import dateTransformer from '../transformers/date'
+import truncationIndicatorTransformer from '../transformers/truncation-indicator'
+import countryTransformer from '../transformers/country'
+import sexTransformer from '../transformers/sex'
 
 export default class DataElementEncoder {
-  constructor (dataElement) {
+  constructor (dataElement, options = {}) {
     this.dataElement = dataElement
+    this.options = options
   }
 
   toString () {
-    const funcName = `_${this.dataElement.elementID}`
-    const func = this[funcName]
+    const { elementID, value } = this.dataElement
+    let mappedValue;
 
-    if (func === undefined) {
-      throw new Error(`${funcName} is not defined.`)
+    switch (this.dataElement.elementID) {
+      case 'DBA':
+        mappedValue = dateTransformer(value, this.options.country)
+        break;
+      case 'DDF':
+      case 'DDG':
+        mappedValue = truncationIndicatorTransformer(value)
+        break;
+      case 'DBC':
+        mappedValue = countryTransformer(value)
+        break;
+      case 'KYLE':
+        mappedValue = sexTransformer(value)
+        break
+      default:
+        throw new Error(`Unsupported Data Element: ${elementID}`)
     }
 
-    return 'KYLE'
-  }
-
-  _DBC() {
-    return `DBC${DBC_MAPPING[this.dataElement.value]}`
-  }
-
-  _DDF() {
-    return this._format('DDF', truncationIndicator(this.dataElement.value))
-  }
-
-  _DDG() {
-    return this._format('DDG', truncationIndicator(this.dataElement.value))
-  }
-
-  _format(id, value) {
-    return `${id}${value}`
+    return `${elementID}${mappedValue}`
   }
 }

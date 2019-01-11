@@ -1,5 +1,5 @@
 function run(args) {
-  console.log('Hello, world!')
+  console.log('AAMVA')
 }
 
 module.exports = {
