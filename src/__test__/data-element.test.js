@@ -1,4 +1,4 @@
-import DataElement from '../data-element'
+import DataElement from '../data-element';
 
 describe('DataElement', () => {
   describe('constructor', () => {
@@ -6,9 +6,9 @@ describe('DataElement', () => {
       expect(() => {
         new DataElement({
           elementID: 'DAY',
-          value: 'HAZ'
-        }).toNotThrow()
-      })
-    })
-  })
-})
+          value: 'HAZ',
+        }).toNotThrow();
+      });
+    });
+  });
+});

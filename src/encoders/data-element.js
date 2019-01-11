@@ -1,36 +1,16 @@
-import dateTransformer from '../transformers/date'
-import truncationIndicatorTransformer from '../transformers/truncation-indicator'
-import countryTransformer from '../transformers/country'
-import sexTransformer from '../transformers/sex'
+import { createDataElementTransformer } from '../factories';
 
 export default class DataElementEncoder {
-  constructor (dataElement, options = {}) {
-    this.dataElement = dataElement
-    this.options = options
+  constructor(dataElement, options = {}) {
+    this.dataElement = dataElement;
+    this.options = options;
   }
 
-  toString () {
-    const { elementID, value } = this.dataElement
-    let mappedValue;
+  toString() {
+    const { elementID } = this.dataElement;
+    const transformer = createDataElementTransformer(this.dataElement);
+    const transformedValue = transformer(this.options);
 
-    switch (this.dataElement.elementID) {
-      case 'DBA':
-        mappedValue = dateTransformer(value, this.options.country)
-        break;
-      case 'DDF':
-      case 'DDG':
-        mappedValue = truncationIndicatorTransformer(value)
-        break;
-      case 'DBC':
-        mappedValue = countryTransformer(value)
-        break;
-      case 'KYLE':
-        mappedValue = sexTransformer(value)
-        break
-      default:
-        throw new Error(`Unsupported Data Element: ${elementID}`)
-    }
-
-    return `${elementID}${mappedValue}`
+    return `${elementID}${transformedValue}`;
   }
 }

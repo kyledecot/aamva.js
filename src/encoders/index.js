@@ -1,5 +1,5 @@
-import DataElement from './data-element'
+import DataElement from './data-element';
 
 export {
   DataElement,
-}
+};

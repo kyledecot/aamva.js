@@ -1,10 +1,10 @@
 export default (value) => {
   switch (value) {
     case 1:
-      return 'male'
+      return 'male';
     case 2:
-      return 'female'
+      return 'female';
     default:
-      throw new Error(`Unsupported Sex: ${value}.`)
+      throw new Error(`Unsupported Sex: ${value}.`);
   }
-}
+};

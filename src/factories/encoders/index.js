@@ -1,12 +1,10 @@
-import DataElementEncoder from '../../encoders/data-element'
+import DataElementEncoder from '../../encoders/data-element';
 
-const createDataElementEncoder = (dataElement, options = {}) => {
-  return new DataElementEncoder(dataElement, options)
-}
+const createDataElementEncoder = (dataElement, options = {}) => new DataElementEncoder(dataElement, options);
 
 export {
-  createDataElementEncoder
-}
+  createDataElementEncoder,
+};
 
 //
 // import truncationIndicator from '../transformers/truncation-indicator'

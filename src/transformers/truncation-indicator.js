@@ -1,10 +1,10 @@
 export default (value) => {
   switch (value) {
     case true:
-      return 'T'
+      return 'T';
     case false:
-      return 'N'
+      return 'N';
     default:
-      return 'U'
+      return 'U';
   }
-}
+};

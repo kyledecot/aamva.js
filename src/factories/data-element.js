@@ -1,6 +1,6 @@
-import DataElement from '../data-element'
+import DataElement from '../data-element';
 
 export default (elementID, value) => new DataElement({
   elementID,
-  value
-})
+  value,
+});

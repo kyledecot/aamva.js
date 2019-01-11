@@ -1,10 +1,10 @@
 export default (value) => {
   switch (value) {
     case 'U.S.':
-      return 'USA'
+      return 'USA';
     case 'Canada':
-      return 'CAN'
+      return 'CAN';
     default:
-      throw new Error(`Unsupported Country: ${value}`)
+      throw new Error(`Unsupported Country: ${value}`);
   }
-}
+};

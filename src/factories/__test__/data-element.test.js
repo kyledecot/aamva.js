@@ -1,13 +1,13 @@
-import dataElement from '../data-element'
-import DataElement from '../../data-element'
+import dataElement from '../data-element';
+import DataElement from '../../data-element';
 
 describe('dataElement', () => {
-  test('works correctly',() => {
+  test('works correctly', () => {
     const expectedDataElement = new DataElement({
       elementID: 'DAY',
-      value: 'HAZ'
-    })
+      value: 'HAZ',
+    });
 
-    expect(dataElement('DAY', 'HAZ')).toEqual(expectedDataElement)
-  })
-})
+    expect(dataElement('DAY', 'HAZ')).toEqual(expectedDataElement);
+  });
+});

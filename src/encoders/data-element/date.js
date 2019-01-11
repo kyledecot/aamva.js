@@ -1,7 +1,7 @@
-import dateTransformer from '../../transformers/date'
+import dateTransformer from '../../transformers/date';
 
 export default (id, value, options = {}) => {
-  const { country } = options
+  const { country } = options;
 
-  return `${id}${dateTransformer(value, country)}`
-}
+  return `${id}${dateTransformer(value, country)}`;
+};

@@ -1,7 +1,7 @@
 function run(args) {
-  console.log('AAMVA')
+  console.log('AAMVA');
 }
 
 module.exports = {
-  run
-}
+  run,
+};
