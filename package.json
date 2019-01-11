@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/kyledecot/aamva.js/issues"
   },
-  "homepage": "https://github.com/kyledecot/aamva.js#readme"
+  "homepage": "https://github.com/kyledecot/aamva.js#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
 }
