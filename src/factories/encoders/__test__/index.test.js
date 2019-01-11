@@ -10,6 +10,6 @@ describe('createDataElementEncoder', () => {
       });
 
       expect(encoder.toString()).toEqual('DBA01012018');
-    })
+    });
   });
 });

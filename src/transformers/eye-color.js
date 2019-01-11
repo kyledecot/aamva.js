@@ -1,26 +1,26 @@
 export default (value) => {
   switch (value) {
     case 'Black':
-      return 'BLK'
+      return 'BLK';
     case 'Blue':
-      return 'BLU'
+      return 'BLU';
     case 'Brown':
-      return 'BRO'
+      return 'BRO';
     case 'Dichromatic':
-      return 'DIC'
+      return 'DIC';
     case 'Gray':
-      return 'GRY'
+      return 'GRY';
     case 'Green':
-      return 'GRN'
+      return 'GRN';
     case 'Hazel':
-      return 'HAZ'
+      return 'HAZ';
     case 'Maroon':
-      return 'MAR'
+      return 'MAR';
     case 'Pink':
-      return 'PNK'
+      return 'PNK';
     case 'Unknown':
-      return 'UNK'
+      return 'UNK';
     default:
-      throw new Error(`Unsupported Eye Color: ${value}`)
+      throw new Error(`Unsupported Eye Color: ${value}`);
   }
-}
+};

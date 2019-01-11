@@ -1,6 +1,4 @@
-import truncateTransformer from '../truncate'
+import truncateTransformer from '../truncate';
 
-export default (value) => {
-  // TODO: Fixed width so needs padding/additional formatting
-  return truncateTransformer(value, 11)
-}
+export default // TODO: Fixed width so needs padding/additional formatting
+value => truncateTransformer(value, 11);

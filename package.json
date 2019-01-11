@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src"
   },
   "repository": "git+https://github.com/kyledecot/aamva.js.git",
   "author": "Kyle Decot <kyle@joinroot.com>",

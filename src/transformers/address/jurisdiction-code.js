@@ -1,3 +1,3 @@
-import truncateTransformer from '../truncate'
+import truncateTransformer from '../truncate';
 
-export default (value) => truncateTransformer(value, 2)
+export default value => truncateTransformer(value, 2);

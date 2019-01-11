@@ -1,3 +1,3 @@
-import truncateTransformer from './truncate'
+import truncateTransformer from './truncate';
 
-export default (values) => truncateTransformer(values.join(','), 40)
+export default values => truncateTransformer(values.join(','), 40);
