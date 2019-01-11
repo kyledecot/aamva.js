@@ -1,5 +1,5 @@
 import truncateTransformer from './truncate'
 
-export default (value) => truncateTransformer(value, {
-  length: 6
-})
+export default (value) => {
+  return truncateTransformer(value, 6)
+}

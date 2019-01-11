@@ -4,6 +4,7 @@ import countryTransformer from '../transformers/country';
 import sexTransformer from '../transformers/sex';
 import eyeColorTransformer from '../transformers/eye-color'
 import vehicleClassTransformer from '../transformers/vehicle-class'
+import restrictionCodesTransformer from '../transformers/restriction-codes'
 
 export default ({ elementID, value, options }) => {
   switch (elementID) {
@@ -20,6 +21,8 @@ export default ({ elementID, value, options }) => {
       return () => eyeColorTransformer(value)
     case 'DCA':
       return ({ length }) => vehicleClassTransformer(value)
+    case 'DCB':
+      return () => restrictionCodesTransformer(value)
     default:
       throw new Error(`Unable to build Data Element transformer for: ${elementID}`);
   }
