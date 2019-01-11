@@ -1,5 +1,3 @@
 import truncateTransformer from './truncate'
 
-export default (value) => truncateTransformer(value, {
-  length: 12
-})
+export default (value) => truncateTransformer(value, 12)
