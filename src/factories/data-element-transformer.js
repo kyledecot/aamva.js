@@ -12,8 +12,11 @@ import lastNameTransformer from '../transformers/last-name'
 export default ({ elementID, value, options }) => {
   switch (elementID) {
     case 'DBA':
+    case 'DBD':
+    case 'DBB':
       return ({ country }) => dateTransformer(value, country);
     case 'DDF':
+    case 'DDE':
     case 'DDG':
       return () => truncationIndicatorTransformer(value);
     case 'DBC':
