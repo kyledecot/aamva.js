@@ -1,13 +1,13 @@
-import createDataElement from '../create-data-element'
+import dataElement from '../data-element'
 import DataElement from '../../data-element'
 
-describe('createDataElement', () => {
+describe('dataElement', () => {
   test('works correctly',() => {
     const expectedDataElement = new DataElement({
       elementID: 'DAY',
       value: 'HAZ'
     })
 
-    expect(createDataElement('DAY', 'HAZ')).toEqual(expectedDataElement)
+    expect(dataElement('DAY', 'HAZ')).toEqual(expectedDataElement)
   })
 })
