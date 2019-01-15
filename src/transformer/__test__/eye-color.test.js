@@ -2,7 +2,7 @@ import eyeColorTransformer from '../eye-color';
 
 describe('eyeColorTransformer', () => {
   describe('when eye color is supported', () => {
-    it('transforms correctly', () => {
+    test('transforms correctly', () => {
       expect(eyeColorTransformer('Hazel')).toEqual('HAZ');
     });
   });

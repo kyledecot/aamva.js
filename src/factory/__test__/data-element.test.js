@@ -4,7 +4,7 @@ import DataElement from '../../data-element';
 describe('dataElement', () => {
   test('works correctly', () => {
     const expectedDataElement = new DataElement({
-      elementID: 'DAY',
+      id: 'DAY',
       value: 'HAZ',
     });
 

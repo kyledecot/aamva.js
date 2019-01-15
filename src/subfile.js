@@ -1,5 +1,6 @@
 export default class Subfile {
-  constructor() {
-
+  constructor({ type, dataElements }) {
+    this.type = type
+    this.dataElements = dataElements
   }
 }
