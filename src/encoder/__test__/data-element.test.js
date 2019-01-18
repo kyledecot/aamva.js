@@ -6,16 +6,16 @@ describe('Encoder - Data Element', () => {
     describe('DAQ (Customer ID Number)', () => {
       test('encodes correctly', () => {
         const dataElement = Factory.dataElement('DAQ', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-        const encoder = new Encoder(dataElement);
+        const encoder = new Encoder(dataElement, Factory);
 
-        expect(encoder.toString()).toEqual('DAQABCDEFGHIJKLMNOPQRSTUV');
+        expect(encoder.toString()).toEqual('DAQABCDEFGHIJKLMNOPQRSTUVWXY');
       });
     });
 
     describe('DDG', () => {
       test('encodes correctly', () => {
         const dataElement = Factory.dataElement('DDG', true);
-        const encoder = new Encoder(dataElement);
+        const encoder = new Encoder(dataElement, Factory);
 
         expect(encoder.toString()).toEqual('DDGT');
       });
@@ -25,7 +25,7 @@ describe('Encoder - Data Element', () => {
       describe('when U.S.', () => {
         test('works correctly', () => {
           const dataElement = Factory.dataElement('DCG', 'U.S.');
-          const encoder = new Encoder(dataElement);
+          const encoder = new Encoder(dataElement, Factory);
 
           expect(encoder.toString()).toEqual('DCGUSA');
         });
@@ -34,7 +34,7 @@ describe('Encoder - Data Element', () => {
       describe('when Canada', () => {
         test('works correctly', () => {
           const dataElement = Factory.dataElement('DCG', 'Canada');
-          const encoder = new Encoder(dataElement);
+          const encoder = new Encoder(dataElement, Factory);
 
           expect(encoder.toString()).toEqual('DCGCAN');
         });
@@ -45,7 +45,7 @@ describe('Encoder - Data Element', () => {
       describe('when truncated', () => {
         test('encodes correctly', () => {
           const dataElement = Factory.dataElement('DDF', true);
-          const encoder = new Encoder(dataElement);
+          const encoder = new Encoder(dataElement, Factory);
 
           expect(encoder.toString()).toEqual('DDFT');
         });
@@ -54,7 +54,7 @@ describe('Encoder - Data Element', () => {
       // describe('when not truncated', () => {
       //   test('encodes correctly', () => {
       //     const dataElement = Factory.dataElement('DDF', false)
-      //     const encoder = new Encoder(dataElement)
+      //     const encoder = new Encoder(dataElement, Factory)
       //
       //     expect(dataElement.toString()).toEqual('DDFN')
       //   })
@@ -63,7 +63,7 @@ describe('Encoder - Data Element', () => {
       // describe('when truncation unknown', () => {
       //   test('encodes correctly', () => {
       //     const dataElement = Factory.dataElement('DDF', null)
-      //     const encoder = new Encoder(dataElement)
+      //     const encoder = new Encoder(dataElement, Factory)
       //
       //     expect(dataElement.toString()).toEqual('DDFU')
       //   })

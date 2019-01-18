@@ -1,7 +1,7 @@
-import Truncate from './transformer/truncate'
+import Truncate from './transformer/truncate';
 
 const Transformer = {
   Truncate,
-}
+};
 
-export default Transformer
+export default Transformer;

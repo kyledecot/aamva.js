@@ -1,8 +1,9 @@
-import Transformer from '../factory/transformer';
-
 class DataElement {
-  constructor(dataElement, options = {}) {
-    this.transformer = new Transformer(dataElement.id, options);
+  constructor(dataElement, factory, options = {}) {
+    this.transformer = factory.transformer('data-element', {
+      id: dataElement.id,
+      ...options,
+    });
     this.dataElement = dataElement;
   }
 

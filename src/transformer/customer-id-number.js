@@ -1,10 +1,9 @@
-// import Factory from '../factory'
+import Transformer from '../factory/transformer';
 
 export default (value) => {
-  return value
-  // const truncateTransformer = new Factory.Transformer('truncate', {
-  //   length: 25
-  // })
-  //
-  // return truncateTransformer(value)
-}
+  const truncateTransformer = Transformer('truncate', {
+    length: 25,
+  });
+
+  return truncateTransformer(value);
+};

@@ -1,12 +1,9 @@
 import dataElement from '../data-element';
-import DataElement from '../../data-element';
+import Factory from '../../factory'
 
 describe('dataElement', () => {
   test('works correctly', () => {
-    const expectedDataElement = new DataElement({
-      id: 'DAY',
-      value: 'HAZ',
-    });
+    const expectedDataElement = Factory.dataElement('DAY', 'HAZ');
 
     expect(dataElement('DAY', 'HAZ')).toEqual(expectedDataElement);
   });
