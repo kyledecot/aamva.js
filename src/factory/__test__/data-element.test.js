@@ -1,5 +1,5 @@
 import dataElement from '../data-element';
-import Factory from '../../factory'
+import Factory from '../../factory';
 
 describe('dataElement', () => {
   test('works correctly', () => {

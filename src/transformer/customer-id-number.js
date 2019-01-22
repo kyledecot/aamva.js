@@ -1,9 +1,3 @@
-import Transformer from '../factory/transformer';
+import truncate from './truncate';
 
-export default (value) => {
-  const truncateTransformer = Transformer('truncate', {
-    length: 25,
-  });
-
-  return truncateTransformer(value);
-};
+export default value => truncate(value, 25);

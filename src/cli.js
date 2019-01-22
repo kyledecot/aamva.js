@@ -1,6 +1,4 @@
-function run(args) {
-  console.log('AAMVA');
-}
+function run() {}
 
 module.exports = {
   run,
