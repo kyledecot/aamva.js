@@ -51,23 +51,23 @@ describe('Encoder - Data Element', () => {
         });
       });
 
-      // describe('when not truncated', () => {
-      //   test('encodes correctly', () => {
-      //     const dataElement = Factory.dataElement('DDF', false)
-      //     const encoder = new Encoder(dataElement, Factory)
-      //
-      //     expect(dataElement.toString()).toEqual('DDFN')
-      //   })
-      // })
-      //
-      // describe('when truncation unknown', () => {
-      //   test('encodes correctly', () => {
-      //     const dataElement = Factory.dataElement('DDF', null)
-      //     const encoder = new Encoder(dataElement, Factory)
-      //
-      //     expect(dataElement.toString()).toEqual('DDFU')
-      //   })
-      // })
+      describe('when not truncated', () => {
+        test('encodes correctly', () => {
+          const dataElement = Factory.dataElement('DDF', false);
+          const encoder = new Encoder(dataElement, Factory);
+
+          expect(encoder.toString()).toEqual('DDFN');
+        });
+      });
+
+      describe('when truncation unknown', () => {
+        test('encodes correctly', () => {
+          const dataElement = Factory.dataElement('DDF', null);
+          const encoder = new Encoder(dataElement, Factory);
+
+          expect(encoder.toString()).toEqual('DDFU');
+        });
+      });
     });
   });
 });
