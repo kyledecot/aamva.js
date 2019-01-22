@@ -1,9 +1,8 @@
-// import Transformer from '../transformer';
-
 import customerIDNumber from '../transformer/customer-id-number';
 import truncateIndicator from '../transformer/truncation-indicator';
 import countryIdentification from '../transformer/country';
 import truncate from '../transformer/truncate';
+import placeOfBirth from '../transformer/place-of-birth';
 
 const dataElement = (id, value, options) => {
   switch (id) {
@@ -12,10 +11,12 @@ const dataElement = (id, value, options) => {
     case 'DDF':
     case 'DDG':
       return truncateIndicator(value, options);
+    case 'DCI':
+      return placeOfBirth(value, options);
     case 'DCG':
       return countryIdentification(value, options);
     default:
-      throw new Error(`Unknown: ${id}`);
+      throw new Error(`Unsupported Data Element ID: ${id}.`);
   }
 };
 
@@ -31,29 +32,3 @@ export default (type, options) => (value) => {
       throw new Error(`Unknown type: ${type}`);
   }
 };
-// class Transformer {
-//   constructor(dataElementID) {
-//     this.dataElementID = dataElementID;
-//   }
-//
-//   run(value) {
-//     const transformer = () => value;
-//
-//     switch (this.dataElementID) {
-//       case 'DAQ':
-//         return transformer(value);
-//       case 'DDG':
-//         return transformer(value);
-//       case 'DDF':
-//         return transformer(value);
-//       case 'DCG':
-//         return transformer(value);
-//       case 'DAY':
-//         return transformer(value);
-//       default:
-//         throw new Error(`Unsupported Data Element ID: ${this.dataElementID}`);
-//     }
-//   }
-// }
-//
-// export default Transformer;

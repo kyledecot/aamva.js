@@ -41,6 +41,15 @@ describe('Encoder - Data Element', () => {
       });
     });
 
+    describe('DCI (Place of Birth)', () => {
+      test('encodes correctly', () => {
+        const dataElement = Factory.dataElement('DCI', 'Columbus');
+        const encoder = new Encoder(dataElement, Factory);
+
+        expect(encoder.toString()).toEqual('DCIColumbus');
+      });
+    });
+
     describe('DDF (First Name Truncation)', () => {
       describe('when truncated', () => {
         test('encodes correctly', () => {
