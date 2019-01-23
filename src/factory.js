@@ -1,18 +1,13 @@
-// import DataElement from './factory/data-element';
+import dataElement from './factory/data-element';
 import Encoder from './factory/encoder';
-import Subfile from './factory/subfile';
+import subfile from './factory/subfile';
 import transformer from './factory/transformer';
-
-const dataElement = (id, value) => ({
-  id,
-  value,
-});
 
 const Factory = {
   dataElement,
   transformer,
   encoder: () => Encoder,
-  subfile: () => new Subfile(),
+  subfile,
 };
 
 export default Factory;

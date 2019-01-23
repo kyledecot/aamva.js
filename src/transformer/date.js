@@ -5,7 +5,7 @@ const MAPPING = {
   Canada: 'YYYYMMDD',
 };
 
-export default (value, country) => {
+export default (value, { country }) => {
   const format = MAPPING[country];
 
   if (format === undefined) {
