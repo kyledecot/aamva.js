@@ -32,7 +32,7 @@ describe('Subfile', () => {
         ]);
 
         const encoder = new Encoder(subfile, Factory, {
-          country: 'U.S.'
+          country: 'U.S.',
         });
         const expected = `DLDCANONE${Standard.dataElementSeparator()}`;
 

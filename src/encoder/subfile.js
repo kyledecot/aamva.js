@@ -8,9 +8,7 @@ export default class Subfile {
   }
 
   toString() {
-    const encodedDataElements = this.subfile.dataElements.map((dataElement) => {
-      return new DataElementEncoder(dataElement, this.factory, this.options).toString();
-    });
+    const encodedDataElements = this.subfile.dataElements.map(dataElement => new DataElementEncoder(dataElement, this.factory, this.options).toString());
 
     return `${this.subfile.type}${encodedDataElements}`;
   }
