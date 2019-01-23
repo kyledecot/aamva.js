@@ -18,7 +18,7 @@ describe('Subfile', () => {
           Factory.dataElement('DBB', ''),
           Factory.dataElement('DBC', 1),
           Factory.dataElement('DAY', 'Hazel'),
-          Factory.dataElement('DAU', ''),
+          Factory.dataElement('DAU', 60),
           Factory.dataElement('DAG', ''),
           Factory.dataElement('DAI', ''),
           Factory.dataElement('DAJ', ''),
@@ -33,6 +33,7 @@ describe('Subfile', () => {
 
         const encoder = new Encoder(subfile, Factory, {
           country: 'U.S.',
+          unit: 'in',
         });
         const expected = `DLDCANONE${Standard.dataElementSeparator()}`;
 
